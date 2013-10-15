@@ -1,0 +1,254 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "singularitygs";
+@import "partials/variables";
+@import "partials/mixins";
+
+
+body, html{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+.container{
+	@include background-grid;
+	min-height:100%;
+	margin:0 auto;
+	// height:935px;
+}
+
+.menu{
+	// 	@include grid-span(4,1);
+	// 	background: blue;
+	// 	height:200px;
+
+	// 	@include breakpoint(30em){
+	// 	@include grid-span(6,1);
+	// 	background: green;
+	// 	float:none
+
+	// }
+	// 	@include breakpoint(40em){
+	// 	@include grid-span(8,1);
+	// 	background: $color5;
+	// 	float:none
+	// }
+
+	// @include breakpoint(50em){
+	// 	@include grid-span(12,1);
+	// 	background: black;
+	// 	float:none
+ 
+
+	// }
+
+	float:left;
+	width:100%;
+	background:blue;
+	height:100px;
+}
+
+.main{
+
+	// @include grid-span(4,1);
+	// background: $color8;
+	// min-height:100%;
+	// margin:0 auto;
+
+
+	// 	@include breakpoint(30em){
+	// 	@include grid-span(4,2);
+	// 	background: $color3;
+	// 	@include background-grid;
+
+	// }
+	// 	@include breakpoint(40em){
+	// 	@include grid-span(6,2);
+	// 	background: $color8;
+	// }
+
+	// @include breakpoint(50em){
+	// 	@include grid-span(10,2);
+	// 	background: $color7;
+	// }
+
+
+	width:100%;
+	background:red;
+	height:800px;
+}
+
+.slideshow{
+		@include grid-span(4,1);
+		background: $color6;
+		height:300px;
+
+
+
+		@include breakpoint(30em){
+		@include grid-span(4,2);
+		background: $color3;
+		float: none;
+	}
+		@include breakpoint(40em){
+		@include grid-span(6,2);
+		background: $color5;
+		float: none;
+	}
+
+	@include breakpoint(50em){
+		@include grid-span(10,2);
+		background: $color3;
+		float: none;
+
+	}
+
+}
+
+.left-column{
+		@include grid-span(4,1);
+		background: $color1;
+		height:420px;
+		margin:0 auto;
+
+		@include breakpoint(30em){
+		@include grid-span(6,1);
+		background: $color6;
+	}
+		@include breakpoint(40em){
+		@include grid-span(8,1);
+		background: $color7;
+		float:none;
+	}
+
+	@include breakpoint(50em){
+		@include grid-span(6,2);
+		background: $color2;
+
+	}
+
+}
+
+.large-right-column{
+		@include grid-span(4,1);
+		background: yellow;
+		height:420px;
+		margin:0 auto;
+
+		@include breakpoint(30em){
+		@include grid-span(6,1);
+		background: blue;
+	}
+		@include breakpoint(40em){
+		@include grid-span(8,1);
+		background: pink;
+	}
+
+	@include breakpoint(50em){
+		@include grid-span(6,7);
+		background: green;
+
+	}
+
+}
+
+.middle-column{
+		@include grid-span(4,1);
+		background: yellow;
+		height:420px;
+		margin:0 auto;
+
+		@include breakpoint(30em){
+		@include grid-span(6,1);
+		background: blue;
+	}
+		@include breakpoint(40em){
+		@include grid-span(4,1);
+		background: pink;
+	}
+
+		@include breakpoint(50em){
+		@include grid-span(3,7);
+		background: green;
+
+	}
+
+}
+
+.single-right-column{
+		@include grid-span(4,1);
+		background: brown;
+		height:420px;
+		margin:0 auto;
+
+		@include breakpoint(30em){
+		@include grid-span(6,1);
+		background: pink;
+	}
+		@include breakpoint(40em){
+		@include grid-span(3,5);
+		background: blue;
+	}
+
+	@include breakpoint(50em){
+		@include grid-span(3,9);
+		background: yellow;
+
+	}
+
+}
+
+.clearfix{
+	clear:both;
+}
+
+.footer{
+	// 	@include grid-span(4,1);
+	// 	background: blue;
+	// 	height:200px;
+
+	// 	@include breakpoint(30em){
+	// 	@include grid-span(6,1);
+	// 	background: green;
+
+	// }
+	// 	@include breakpoint(40em){
+	// 	@include grid-span(8,1);
+	// 	background: $color5;
+	// }
+
+	// 	@include breakpoint(50em){
+	// 	@include grid-span(12,1);
+	// 	background: black;
+ 
+
+	// }
+	float:right;
+	width:100%;
+	background:black;
+	height:100px;
+}
+.block-info{
+	@include block1;
+}
+
+.block-patient{
+	@include block1;
+	background:$color8;
+
+}
+
+
+!bg_color = #FF0
+@for !i from 1 through 9
+	@if !i == 3
+		!bg_color = #cdcdcd
+		.block-info{!i}{
+			@include block1;
+			background-color: #{!bg_color};
+		}
